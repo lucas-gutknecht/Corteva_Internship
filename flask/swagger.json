@@ -1,0 +1,70 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Weather API",
+        "description": "Get data from the weather API.",
+        "version": "1.0"
+    },
+    "basePath": "/",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/get_data": {
+            "get": {
+                "summary": "Gets first 10 rows of the weather table.",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This is a successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "Results": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "date": {
+                                                "type": "string"
+                                            },
+                                            "max_temp": {
+                                                "type": "string"
+                                            },
+                                            "min_temp": {
+                                                "type": "string"
+                                            },
+                                            "percipitation": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "examples": {
+                            "application/json": {
+                                "Results": [
+                                    {
+                                        "date": "2024-11-20",
+                                        "max_temp": "22",
+                                        "min_temp": "15",
+                                        "percipitation": "0"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
